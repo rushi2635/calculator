@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example</title>
+</head>
+<body style="margin: 20px;">
+
+    
+        <input type="text" id="no1" placeholder="Enter no 1"><br><br>
+        <input type="text" id="no2" placeholder="Enter no 2"><br><br>
+        <button id="answer" onclick="display()">Add</button><br><br>
+    
+    <div id="result"></div>
+
+    <script>
+        function display()
+        {
+            var no1 = Number(document.getElementById("no1").value);
+            var no2 = Number(document.getElementById("no2").value);
+            var add = no1+no2;
+            document.getElementById("result").innerHTML = "add is :<b>" + add + "</b>";
+
+        }
+    </script>
+    
+</body>
+</html>

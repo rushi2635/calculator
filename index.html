@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js program</title>
+</head>
+<body>
+    <table style="width: 100%;">
+        <tr style="width: 100%;">
+            <td style="width: 50%;">
+                <table style="width: 100%;">
+                    <tr style="width: 100%;">
+                        <td style="width: 20%;">
+                            Name :
+                        </td>
+                        <td style="width: 80%;">
+                            <input type="text" id="name" placeholder="Enter your name">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 20%;">
+                            About You :
+                        </td>
+                        <td style="width: 80%;">
+                            <textarea name="" id="about" cols="30" rows="5"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 20%;">
+                            Contact no :
+                        </td>
+                        <td style="width: 80%;">
+                            <input type="number" id="contact">
+                        </td>
+                    </tr>
+                </table><br><br><hr>
+            </td>
+        </tr>
+    </table>
+
+    <label >Gender :</label>
+    <input type="radio" name="Gender" id="male">
+    <label >Male</label>
+    <input type="radio" name="Gender" id="female">
+    <label >Female</label>
+    <input type="radio" name="Gender" id="other">
+    <label >Other</label><br><br>
+    Hobbies :
+    <label><input type="checkbox" id="cricket">Cricket</label>
+    <label><input type="checkbox" id="chess">Chess</label>
+    <label><input type="checkbox" id="football">Football</label><br><br><hr>
+    <button onclick="display()">Display</button>
+    <div id="display"></div><br><br>
+
+    <script>
+        function display()
+        {
+            var name = document.getElementById("name").value;
+            var about = document.getElementById("about").value;
+            var gender = "";
+            if(document.getElementById("male").checked)
+                gender = "Male";
+            if(document.getElementById("female").checked)
+                gender = "Female";
+            if(document.getElementById("other").checked)
+                gender = "Other";
+            var hobbies = "";
+            if(document.getElementById("cricket").checked)
+                hobbies = "Cricket";
+            if(document.getElementById("chess").checked)
+                hobbies += (hobbies == ""?"":",") + "Chess";
+            if(document.getElementById("football").checked)
+                hobbies += (hobbies == ""?"":",") + "Football";
+
+            var str = "<b>Name : </b>" + name +"<br />"
+             str = "<b>About you : </b>" + about +"<br />"
+             str = "<b>Gender : </b>" + gender +"<br />"
+             str = "<b>Hobbies : </b>" + hobbies +"<br />"
+
+             document.getElementById("display").innerHTML =str;
+        }
+    </script>
+
+
+
+</body>
+</html>

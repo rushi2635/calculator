@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+
+    <table style="margin: 50px;">
+        <tr>
+            <td>
+                <input type="text" id="result" >
+                <button onclick="clearresult()">C</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button style="width: 46px;" onclick="displayno(this)">9</button>
+                <button style="width: 46px;" onclick="displayno(this)">8</button>
+                <button style="width: 46px;" onclick="displayno(this)">7</button>
+                <button style="width: 46px;" onclick="displayno(this)">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button style="width: 46px;" onclick="displayno(this)">6</button>
+                <button style="width: 46px;" onclick="displayno(this)">5</button>
+                <button style="width: 46px;" onclick="displayno(this)">4</button>
+                <button style="width: 46px;" onclick="displayno(this)">-</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button style="width: 46px;" onclick="displayno(this)">3</button>
+                <button style="width: 46px;" onclick="displayno(this)">2</button>
+                <button style="width: 46px;" onclick="displayno(this)">1</button>
+                <button style="width: 46px;" onclick="displayno(this)">*</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button style="width: 46px;" onclick="displayno(this)">.</button>
+                <button style="width: 46px;" onclick="displayno(this)">0</button>
+                <button style="width: 46px;" onclick="calculate()">=</button>
+                <button style="width: 46px;" onclick="displayno(this)">/</button>
+            </td>
+        </tr>
+    </table>
+    <script>
+        function displayno(ctrl)
+        {
+            document.getElementById("result").value +=ctrl.innerText;
+        }
+        function clearresult()
+        {
+            document.getElementById("result").value ="";
+        }
+        function calculate()
+        {
+            try{
+                document.getElementById("result").value = eval(document.getElementById("result").value);
+            }
+            catch(ex)
+            {
+                alert("wrong input");
+            }
+        }
+    </script>
+    
+</body>
+</html>
